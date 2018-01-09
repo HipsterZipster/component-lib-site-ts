@@ -40,7 +40,8 @@
     "analyze": "source-map-explorer build/static/js/main.*",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "test:debug": "node --inspect-brk scripts/test.js --runInBand --env=jsdom"
   },
   "devDependencies": {
     "@types/jest": "^22.0.1",

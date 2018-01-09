@@ -11,7 +11,7 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
-const BundleAnalyzerPlugin = require('BundleAnalyzerPlugin').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -269,6 +269,7 @@ module.exports = {
         // Pending further investigation:
         // https://github.com/mishoo/UglifyJS2/issues/2011
         comparisons: false,
+        drop_console: false
       },
       output: {
         comments: false,
@@ -329,7 +330,7 @@ module.exports = {
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       generateStatsFile: true,
-      openAnalyzer: true
+      openAnalyzer: false
     })
   ],
   // Some libraries import Node modules but don't use them in the browser.
